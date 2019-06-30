@@ -1,0 +1,4 @@
+{
+  "deep_learning_aws_ami": "ami-0f9c3751c361c269b",
+  "share_with_accounts": "{{env `AWS_ACCOUNT_ID`}}"
+}
