@@ -4,8 +4,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-PACKER_FILE="$1"
-
 source .env
 
-packer build -var-file=variables.json  "${PACKER_FILE}"
+AWS_PROFILE=$AWS_PROFILE packer build -var AWS_ACCOUNT_ID=$AWS_ACCOUNT_ID deep-learning-ami.json
