@@ -6,6 +6,6 @@ I provision a minimal AMI with just a bunch of useful tools added.
 
 * docker-compose
 * gpu-monitor (git@github.com:petersiemen/gpu_monitor.git)
-* pipenv
+* pipenv (a 'base' virtualenv is bootstrapped in /home/ubuntu/.venv)
 * darknet (Compiled for GPU) 
 

@@ -4,7 +4,7 @@
       "type": "amazon-ebs",
       "source_ami": "ami-0f9c3751c361c269b",
       "region": "eu-central-1",
-      "instance_type": "p2.xlarge",
+      "instance_type": "t2.large",
       "ena_support": true,
       "ssh_username": "ubuntu",
       "ami_name": "ACME Development Deep Learning AMI {{isotime \"2006-01-02_15_04_05\"}}",
@@ -26,19 +26,18 @@
     {
       "type": "shell",
       "inline": [
-        "sudo apt-get update -y -q",
-        "sudo apt-get upgrade -y -q",
-        "sudo apt-get autoremove -q -y",
+        "sudo apt-get update",
+        "sudo apt-get upgrade --yes",
+        "sudo locale-gen",
+        "sudo apt-get install --yes python-pip",
         "ssh-keyscan github.com >> ~/.ssh/known_hosts",
         "git clone git@github.com:petersiemen/gpu_monitor.git",
-        "apt-get install -y -q python3-pip python3-dev htop",
-        "pip3 install --user pipenv",
         "pip install --upgrade pip",
+        "pip install --user pipenv",
         "pip install --user python-dotenv",
         "sudo curl -L \"https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose",
         "git clone https://github.com/pjreddie/darknet.git",
-        "cd /home/ubuntu/darknet && make",
-        "pipenv install Pipfile"
+        "cd /home/ubuntu/darknet && make"
       ]
     }
   ]
