@@ -26,18 +26,21 @@
     {
       "type": "shell",
       "inline": [
-        "sudo apt-get update",
-        "sudo apt-get upgrade --yes",
         "sudo locale-gen",
-        "sudo apt-get install --yes python-pip",
-        "ssh-keyscan github.com >> ~/.ssh/known_hosts",
-        "git clone git@github.com:petersiemen/gpu_monitor.git",
-        "pip install --upgrade pip",
+        "sudo add-apt-repository --yes ppa:deadsnakes/ppa",
+        "sudo apt-get --yes update",
+        "sudo apt-get --yes upgrade",
+        "sudo apt-get install --yes python3.6 python3.6-dev",
+        "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py",
+        "python3.6 get-pip.py --user",
         "pip install --user pipenv",
         "pip install --user python-dotenv",
+        "ssh-keyscan github.com >> ~/.ssh/known_hosts",
+        "git clone git@github.com:petersiemen/gpu_monitor.git",
         "sudo curl -L \"https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose",
-        "git clone https://github.com/pjreddie/darknet.git",
-        "cd /home/ubuntu/darknet && make"
+        "mkdir /home/ubuntu/datasets/",
+        "curl https://sdk.cloud.google.com | bash ",
+        "cd /home/ubuntu/ && rm -rf anaconda3/ examples/ src/ tools/ tutorials/"
       ]
     }
   ]
