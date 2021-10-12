@@ -9,7 +9,7 @@ pytest = "*"
 
 [packages]
 jupyter-tensorboard = "*"
-opencv-python = "==3.2.0.6"
+opencv-python = "==3.4.7.28"
 jupyter = "*"
 matplotlib = "*"
 pandas = "*"
